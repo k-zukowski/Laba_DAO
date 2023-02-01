@@ -1,18 +1,15 @@
 package org.solvd.airportservice;
 
-import org.solvd.airportservice.services.AirlineService;
-import org.solvd.airportservice.utils.MyJSONParserJackson;
-import org.solvd.airportservice.utils.MyXMLParserDOM;
-import org.solvd.airportservice.utils.MyXMLParserJXAB;
-import org.solvd.airportservice.utils.MyXMLParserSAX;
-import org.solvd.airportservice.utils.MyXMLParserStAX;
+import org.solvd.airportservice.models.Airline;
+import org.solvd.airportservice.utils.Creds;
+import org.solvd.airportservice.utils.sql.SQLQueries;
 
 public class Main {
 
   public static void main(String[] args) {
-    AirlineService as = new AirlineService();
+    //AirlineServiceImpl as = new AirlineServiceImpl();
 
-    MyXMLParserSAX myXMLParserSAX = new MyXMLParserSAX();
+/*    MyXMLParserSAX myXMLParserSAX = new MyXMLParserSAX();
     myXMLParserSAX.parse();
 
     MyXMLParserStAX myXMLParserStAX = new MyXMLParserStAX();
@@ -25,7 +22,14 @@ public class Main {
     myXMLParserJXAB.parse();
 
     MyJSONParserJackson myJSONParserJackson = new MyJSONParserJackson();
-    myJSONParserJackson.parse();
+    myJSONParserJackson.parse();*/
+
+    SQLQueries<Airline> sqlQueries = new SQLQueries<>();
+    Creds creds = new Creds();
+    sqlQueries.getById(2L, "SELECT name, headquarters, fleet_size FROM Airlines WHERE name = ?",
+        creds,
+        Airline.class);
+
 
   }
 }

@@ -1,17 +1,18 @@
 package org.solvd.airportservice.dao;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface IBaseDAO<T> {
 
-  Optional<T> getEntityById(long id);
+  Optional<T> getById(long id);
 
-  Optional<T> getEntityByName(String name);
+  List<T> getAll();
 
-  void updateEntity(T entity);
+  T update(T entity);
 
-  T createEntity(T entity);
+  T add(T entity);
 
-  void removeEntityById(long id);
+  boolean deleteById(long id);
 
 }

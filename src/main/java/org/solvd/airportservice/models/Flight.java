@@ -1,12 +1,12 @@
 package org.solvd.airportservice.models;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 public class Flight {
 
   private long id;
-  private LocalDateTime departure;
-  private LocalDateTime arrival;
+  private Timestamp departure;
+  private Timestamp arrival;
   private String status;
   private long airplaneId;
   private long originId;
@@ -20,19 +20,19 @@ public class Flight {
     this.id = id;
   }
 
-  public LocalDateTime getDeparture() {
+  public Timestamp getDeparture() {
     return departure;
   }
 
-  public void setDeparture(LocalDateTime departure) {
+  public void setDeparture(Timestamp departure) {
     this.departure = departure;
   }
 
-  public LocalDateTime getArrival() {
+  public Timestamp getArrival() {
     return arrival;
   }
 
-  public void setArrival(LocalDateTime arrival) {
+  public void setArrival(Timestamp arrival) {
     this.arrival = arrival;
   }
 

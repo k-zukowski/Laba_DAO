@@ -15,7 +15,7 @@ import javax.xml.stream.events.XMLEvent;
 
 public class MyXMLParserStAX {
 
-  public void parse(){
+  public void parse() {
     try {
       Path path = Paths.get(LOCATIONS_XML);
       XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();

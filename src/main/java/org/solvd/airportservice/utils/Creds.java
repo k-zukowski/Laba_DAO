@@ -1,10 +1,10 @@
 package org.solvd.airportservice.utils;
 
+import static org.solvd.airportservice.commons_shared.Const.MYSQL_CREDS_PROPERTIES;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-
-import static org.solvd.airportservice.commons_shared.Const.MYSQL_CREDS_PROPERTIES;
 
 
 public class Creds {
