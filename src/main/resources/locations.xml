@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Locations>
+  <Location id="1">
+    <airportName>John F. Kennedy International Airport</airportName>
+  </Location>
+  <Location id="2">
+    <airportName>Los Angeles International Airport</airportName>
+  </Location>
+  <Location id="3">
+    <airportName>London Heathrow Airport</airportName>
+  </Location>
+  <Location id="4">
+    <airportName>Dubai International Airport</airportName>
+  </Location>
+  <Location id="5">
+    <airportName>Paris Charles de Gaulle Airport</airportName>
+  </Location>
+  <Location id="6">
+    <airportName>Tokyo International Airport (Haneda)</airportName>
+  </Location>
+  <Location id="7">
+    <airportName>Hong Kong International Airport</airportName>
+  </Location>
+</Locations>
