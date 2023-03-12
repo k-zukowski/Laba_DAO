@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="org.solvd.airportservice.dao.IAirlineDAO">
+
+  <sql id="body">
+    ai.id as id,
+    ai.name as name,
+    ai.headquarters as headquarters,
+    ai.fleetSize as fleetSize
+  </sql>
+
+  <select id="getAirline" resultMap="airlineResultMap">
+    SELECT
+    <include refid="body"/>
+    FROM
+    Airlines ai
+    WHERE id = #{id}
+  </select>
+
+  <select id="getAirline" resultMap="airlineResultMap">
+    SELECT
+    <include refid="body"/>
+    FROM
+    Airlines ai
+    WHERE name = #{name}
+  </select>
+
+  <select id="getAirline" parameterType="org.solvd.airportservice.models.Airplane" resultMap="airlineResultMap">
+    SELECT
+    <include refid="body"/>
+    FROM
+    Airlines ai
+    WHERE id = (
+    SELECT id FROM Airplanes air WHERE air.id = #{id}
+    )
+  </select>
+
+  <select id="getAllAirlines" resultMap="airlineResultMap" >
+    SELECT
+    <include refid="body"/>
+    FROM
+    Airlines ai
+  </select>
+
+  <update id="updateEntity">
+    UPDATE Airlines SET
+    name = #{airline.name},
+    headquarters = #{airline.headquarters},
+    fleetSize = #{airline.fleetSize},
+    WHERE id = #{id}
+  </update>
+
+  <update id="updateEntity">
+    UPDATE Airlines SET
+    name = #{name},
+    headquarters = #{headquarters},
+    fleetSize = #{fleetSize},
+    WHERE id = #{id}
+  </update>
+
+  <delete id="deleteAirline">
+    DELETE FROM Airlines WHERE id = #{id}
+  </delete>
+
+  <insert id="addAirline" useGeneratedKeys="true" keyProperty="id">
+    INSERT INTO Airlines (name, headquarters, fleetSize)
+    VALUES (#{name},#{headquarters},#{name})
+  </insert>
+
+  <delete id="removeAirline">
+    DELETE FROM Airlines WHERE id = #{id}
+  </delete>
+
+  <insert id="addAirplane" useGeneratedKeys="true" keyProperty="id">
+    INSERT INTO Airlines (name, headquarters, fleetSize)
+    VALUES (#{name},#{headquarters},#{name})
+  </insert>
+
+
+  <resultMap id="airlineResultMap" type="org.solvd.airportservice.models.Airline" autoMapping="false">
+    <id column="id" property="id"/>
+    <result column="name" property="name"/>
+    <result column="headquarters" property="headquarters"/>
+    <result column="fleetSize" property="fleetSize"/>
+  </resultMap>
+</mapper>

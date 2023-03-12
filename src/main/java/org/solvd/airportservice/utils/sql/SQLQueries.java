@@ -63,15 +63,6 @@ public class SQLQueries<T> {
     return Optional.of(object);
   }
 
-  private <K> K createObject(Class<K> clazz) {
-    try {
-      return clazz.newInstance();
-    } catch (InstantiationException | IllegalAccessException e) {
-      e.printStackTrace();
-      return null;
-    }
-  }
-
   public List<T> getAll(String tableName, Creds creds, Class<T> entity) {
 
     List<T> list = new ArrayList<>();
@@ -262,6 +253,15 @@ public class SQLQueries<T> {
       e.printStackTrace();
     }
     return false;
+  }
+
+  private <K> K createObject(Class<K> clazz) {
+    try {
+      return clazz.newInstance();
+    } catch (InstantiationException | IllegalAccessException e) {
+      e.printStackTrace();
+      return null;
+    }
   }
 }
 

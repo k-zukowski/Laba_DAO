@@ -1,12 +1,13 @@
-package org.solvd.airportservice.dao;
+package org.solvd.airportservice.services;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.solvd.airportservice.models.Airline;
 import org.solvd.airportservice.models.Airplane;
 import org.solvd.airportservice.models.Flight;
+import org.solvd.airportservice.models.Staff;
 
-public interface IAirlineDAO extends IBaseDAO<Airline> {
+public interface IAirlineService {
 
   Airline getAirline(int id);
   Airline getAirline(String name);

@@ -1,5 +1,14 @@
 package org.solvd.airportservice.models;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 public class Airline {
 
   private long id;
@@ -18,50 +27,5 @@ public class Airline {
     this.name = name;
     this.headquarters = headquarters;
     this.fleetSize = fleetSize;
-  }
-
-  public Airline() {
-  }
-
-  public long getId() {
-    return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getHeadquarters() {
-    return headquarters;
-  }
-
-  public void setHeadquarters(String headquarters) {
-    this.headquarters = headquarters;
-  }
-
-  public int getFleetSize() {
-    return fleetSize;
-  }
-
-  public void setFleetSize(int fleetSize) {
-    this.fleetSize = fleetSize;
-  }
-
-  @Override
-  public String toString() {
-    return "Airline{" +
-        "id=" + id +
-        ", name='" + name + '\'' +
-        ", headquarters='" + headquarters + '\'' +
-        ", fleetSize=" + fleetSize +
-        '}';
   }
 }
