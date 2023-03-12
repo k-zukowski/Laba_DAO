@@ -1,0 +1,34 @@
+{
+  "Locations": {
+    "Location": [
+      {
+        "id": 1,
+        "airportName": "John F. Kennedy International Airport"
+      },
+      {
+        "id": 2,
+        "airportName": "Los Angeles International Airport"
+      },
+      {
+        "id": 3,
+        "airportName": "London Heathrow Airport"
+      },
+      {
+        "id": 4,
+        "airportName": "Dubai International Airport"
+      },
+      {
+        "id": 5,
+        "airportName": "Paris Charles de Gaulle Airport"
+      },
+      {
+        "id": 6,
+        "airportName": "Tokyo International Airport (Haneda)"
+      },
+      {
+        "id": 7,
+        "airportName": "Hong Kong International Airport"
+      }
+    ]
+  }
+}
